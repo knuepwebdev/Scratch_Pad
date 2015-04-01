@@ -13,7 +13,7 @@ class NotesController < ApplicationController
 	end
 
 	def update
-		note = Note.update_attributes(note_params)
+		note.update_attributes(note_params)
 		respond_with note
 	end
 
