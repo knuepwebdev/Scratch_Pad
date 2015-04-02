@@ -5,8 +5,9 @@ window.ScratchPad =
   Routers: {}
   initialize: ->
     @AllNotes = new @Collections.Notes(@notesJSON)
-    new @Routers.ScratchPadRouter
-    Backbone.history.start(pushState: true)
+    view = new App.Views.Notes(collection: App.AllNotes)
+    $('#container').html(view.render().el)
+
 window.App = window.ScratchPad
 
 $(document).ready ->
